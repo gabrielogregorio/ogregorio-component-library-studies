@@ -36,8 +36,8 @@ module.exports = {
       },
       fontFamily: {
         ...defaultConfig.theme.extend.fontFamily,
-        'bebas-neue': ['Bebas Neue', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
+        "roboto-Condensed": ["Roboto Condensed", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
     },
   },

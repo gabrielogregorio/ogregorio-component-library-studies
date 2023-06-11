@@ -7,14 +7,14 @@ module.exports = {
     config.plugins = [
       url({
         fileName: './[hash][extname]',
-        include: ['**/*.mp3'],
+        include: ['**/*.(mp3|webp)'],
         emitFiles: true,
         limit: 0
       }),
 
       copy({
         targets: [
-          { src: 'src/**/*.mp3', dest: 'dist' },
+          { src: 'src/**/*.(mp3|webp)', dest: 'dist' },
         ],
         hook: 'writeBundle'
       }),

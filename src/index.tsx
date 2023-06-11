@@ -1,11 +1,14 @@
 import './tailwind.css';
 
-export * from './components/Breadcrumb';
-export * from './components/buttonWithSound';
-export * from './components/NavigationLevel';
-export * from './components/NavigationSpace';
-export * from './components/Text';
-export * from './components/TextLarge';
+export * from './components/ItemMainMenu';
+export * from './components/button';
+export * from './components/ItemSimpleMenu';
+export * from './components/layoutScreens';
+export * from './components/text';
+export * from './components/linkExternal';
+export * from './components/titleSimpleMenu';
+export * from './components/titleText';
+export * from './components/gridDefault';
 
 export * from './hooks/useAudio';
 export * from './hooks/useCopyToClipboard';
