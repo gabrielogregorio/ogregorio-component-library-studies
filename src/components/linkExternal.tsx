@@ -18,11 +18,11 @@ export const LinkExternal = ({ href, icon, content, level = '0' }: Props) => {
       target="_blank"
       rel="noreferrer"
       href={href}
-      className={`break-words flex items-center py-[0.625rem] ${marginByLevel[level]}`}
+      className={`break-words flex items-center py-[0.625rem] group ${marginByLevel[level]}`}
     >
       {icon ? <span className="mr-[0.625rem]">{icon}</span> : undefined}
 
-      <span className="font-roboto-Condensed text-[1rem] tracking-[5%] text-white/60 hover:text-white">
+      <span className="font-roboto-Condensed text-[1rem] tracking-[5%] text-white/60 group-hover:text-white">
         {content}
       </span>
 

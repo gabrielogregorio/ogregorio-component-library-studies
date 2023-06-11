@@ -6,7 +6,7 @@ export type TitleSimpleMenuProps = {
 
 export const TitleSimpleMenu = ({ content }: TitleSimpleMenuProps) => {
   return (
-    <div className="w-full flex justify-between items-center">
+    <div className="w-full flex justify-between items-center mb-[21px]">
       <button
         type="button"
         className="text-white font-roboto-Condensed font-normal text-[1.25rem] tracking-[5%] mb-[0px] text-left"

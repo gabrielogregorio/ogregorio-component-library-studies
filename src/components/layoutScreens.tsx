@@ -84,7 +84,7 @@ export const LayoutScreen = ({
       <div className="absolute min-h-[100vh] min-w-[100vw] max-h-[100vh] max-w-[100vw] top-0 left-0 z-20 bg-black/80 animate-fadeInDrop transition-all duration-200 flex flex-col pt-[70px] px-[70px] pb-[50px]">
         <Breadcrumb screenTitle={screenTitle} onReturn={onReturn} />
 
-        <div className="flex-1 flex gap-6 animate-fadeIn pt-[4.4rem] pb-[4.4rem] w-full scrollbar overflow-y-auto">
+        <div className="flex-1 flex gap-6 animate-fadeIn pt-[4.4rem] pb-[1rem] w-full scrollbar overflow-y-auto">
           {children}
         </div>
 
