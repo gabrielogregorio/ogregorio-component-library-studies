@@ -32,11 +32,13 @@ styleInject(css_248z,{"insertAt":"top"});
 
 const ItemMainMenu = ({
   onClick,
-  content
+  content,
+  onHover = () => {}
 }) => {
   return React.createElement("button", {
     onClick: onClick,
     type: "button",
+    onMouseEnter: onHover,
     className: "font-roboto-Condensed text-[1.25rem] tracking-[5%] mt-[0.625rem] mb-[0px] px-[0.875rem] py-[0.438rem] border border-transparent hover:border-white/60 text-white hover:bg-black/30"
   }, content);
 };
@@ -46,7 +48,9 @@ const Button = ({
   iconRight,
   content,
   onClick,
+  onHover = () => {},
   isRisked = false,
+  ariaLabel = undefined,
   isDisabled = false
 }) => {
   const styleNormalAndDisabled = isDisabled ? 'text-white/40' : 'text-white';
@@ -57,6 +61,8 @@ const Button = ({
         onClick();
       }
     },
+    "aria-label": ariaLabel,
+    onMouseEnter: onHover,
     disabled: isDisabled,
     type: "button",
     className: `font-roboto-Condensed text-[1rem] tracking-[9%] mb-[0px] px-[0.875rem] py-[0.438rem] border border-transparent hover:border-white/60 hover:bg-black/30 flex items-center justify-center ${styleIsRisked}`
@@ -71,7 +77,8 @@ const ItemSimpleMenu = ({
   content,
   level = '0',
   isSelected = false,
-  onClick
+  onClick,
+  onHover = () => {}
 }) => {
   const marginByLevel = {
     '0': 'ml-[0px]',
@@ -81,6 +88,7 @@ const ItemSimpleMenu = ({
   return React.createElement("button", {
     type: "button",
     onClick: onClick,
+    onMouseEnter: onHover,
     className: `font-roboto-Condensed text-[1.25rem] tracking-[5%] mb-[0px] px-[0.875rem] py-[0.438rem] border border-transparent hover:border-white/60 hover:text-white hover:bg-black/30 ${marginByLevel[level]} ${styleIsSelected}`
   }, content);
 };

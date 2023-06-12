@@ -1,11 +1,12 @@
 import { ReactElement, ReactNode } from 'react';
-declare type ButtonProps = {
+export declare type ButtonProps = {
     iconLeft?: ReactNode;
     iconRight?: ReactNode;
     content: string;
     onClick: () => void;
+    onHover?: () => void;
     isRisked?: boolean;
+    ariaLabel?: string;
     isDisabled?: boolean;
 };
-export declare const Button: ({ iconLeft, iconRight, content, onClick, isRisked, isDisabled, }: ButtonProps) => ReactElement;
-export {};
+export declare const Button: ({ iconLeft, iconRight, content, onClick, onHover, isRisked, ariaLabel, isDisabled, }: ButtonProps) => ReactElement;

@@ -1,7 +1,7 @@
 import React from 'react';
-declare type ItemMainMenuProps = {
+export declare type ItemMainMenuProps = {
     onClick: () => void;
+    onHover?: () => void;
     content: string;
 };
-export declare const ItemMainMenu: ({ onClick, content }: ItemMainMenuProps) => React.JSX.Element;
-export {};
+export declare const ItemMainMenu: ({ onClick, content, onHover, }: ItemMainMenuProps) => React.JSX.Element;
