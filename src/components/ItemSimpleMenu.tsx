@@ -1,9 +1,10 @@
 import React from 'react';
 
-type ItemSimpleMenuProps = {
+export type ItemSimpleMenuProps = {
   content: string;
   level?: '0' | '1';
   onClick: () => void;
+  onHover?: () => void;
   isSelected?: boolean;
 };
 
@@ -12,6 +13,7 @@ export const ItemSimpleMenu = ({
   level = '0',
   isSelected = false,
   onClick,
+  onHover = () => {},
 }: ItemSimpleMenuProps) => {
   const marginByLevel = {
     '0': 'ml-[0px]',
@@ -23,6 +25,7 @@ export const ItemSimpleMenu = ({
     <button
       type="button"
       onClick={onClick}
+      onMouseEnter={onHover}
       className={`font-roboto-Condensed text-[1.25rem] tracking-[5%] mb-[0px] px-[0.875rem] py-[0.438rem] border border-transparent hover:border-white/60 hover:text-white hover:bg-black/30 ${marginByLevel[level]} ${styleIsSelected}`}
     >
       {content}
