@@ -100,7 +100,7 @@ jobs:
 
       - name: build App
         run: |
-          yarn build
+          yarn build-storybook
 
       - name: comment on PR, doing deploy
         uses: peter-evans/create-or-update-comment@v3
@@ -115,7 +115,7 @@ jobs:
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/gabrielogregorio/ogregorio-component-library-studies.git
           mkdir -p preview/${{ steps.branch_directory.outputs.build_directory }}
-          cp -r build-storybook/* preview/${{ steps.branch_directory.outputs.build_directory }}
+          cp -r storybook-static/* preview/${{ steps.branch_directory.outputs.build_directory }}
           npx gh-pages -d preview --add -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
