@@ -31,6 +31,6 @@ jobs:
       - name: deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/gabrielogregorio/ogregorio-component-library-studies.git
-          npx gh-pages -d storybook-static -u "github-actions-bot <support+actions@github.com>"
+          npx gh-pages -d storybook-static --add -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
