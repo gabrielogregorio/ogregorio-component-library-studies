@@ -1,4 +1,4 @@
-name: Deploy Gh Pages
+name: Deploy Storybook to gh pages
 
 on:
   push:
@@ -25,12 +25,12 @@ jobs:
       - name: install dependencies and test
         run: yarn --frozen-lockfile
 
-      - name: build MFE
-        run: yarn build
+      - name: build storybook
+        run: yarn build-storybook
 
       - name: deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/gabrielogregorio/ogregorio-component-library-studies.git
-          npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
+          npx gh-pages -d storybook-static -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -5,9 +5,5 @@ export type TitleTextProps = {
 };
 
 export const TitleText = ({ content }: TitleTextProps) => {
-  return (
-    <p className="font-roboto-Condensed font-bold text-[1rem] text-white tracking-[7%] ">
-      {content}
-    </p>
-  );
+  return <p className="font-roboto-Condensed font-bold text-[1rem] text-white tracking-[7%] ">{content}</p>;
 };

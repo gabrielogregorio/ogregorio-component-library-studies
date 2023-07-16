@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-type Props = {
-  content: string;
-};
+export interface ITextProps {
+  children: ReactNode;
+}
 
-export const Text = ({ content }: Props) => {
+export const Text = ({ children }: ITextProps) => {
   return (
     <p className="font-roboto-Condensed font-normal mb-[0.625rem] text-[1rem] text-white tracking-[7%] text-left">
-      {content}
+      {children}
     </p>
   );
 };

@@ -1,4 +1,5 @@
 const defaultConfig = require('./node_modules/example-kit-dev/tailwind.config');
+const { mauve, violet, red, blackA } = require('@radix-ui/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,8 +14,19 @@ module.exports = {
         fadeInDrop: 'fadeInDrop .2s ease-in-out forwards',
         fadeOutDrop: 'fadeOutDrop .2s ease-in-out forwards',
         fadeIn: 'fadeIn .2s ease-in-out',
+        overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
+
       keyframes: {
+        overlayShow: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        contentShow: {
+          from: { opacity: 0, transform: 'translate(-50%, -48%) scale(0.96)' },
+          to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
+        },
         ...defaultConfig.theme.extend.keyframes,
 
         fadeInDrop: {
@@ -33,11 +45,15 @@ module.exports = {
       colors: {
         ...defaultConfig.theme.extend.colors,
         'custom-white': '#FFFFFF',
+        ...mauve,
+        ...violet,
+        ...red,
+        ...blackA,
       },
       fontFamily: {
         ...defaultConfig.theme.extend.fontFamily,
-        "roboto-Condensed": ["Roboto Condensed", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
+        'roboto-Condensed': ['Roboto Condensed', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
     },
   },

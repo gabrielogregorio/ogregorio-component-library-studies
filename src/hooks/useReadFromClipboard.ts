@@ -7,8 +7,8 @@ export const useReadFromClipboard = (): {
   const readClipboard = useCallback(async () => {
     return navigator.clipboard
       .readText()
-      .then(text => text)
-      .catch(err => {
+      .then((text) => text)
+      .catch((err) => {
         console.error('Could not read clipboard: ', err);
         return '';
       });

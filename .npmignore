@@ -1,7 +1,13 @@
 ./github
+__mocks__
+.husky
 ./storybook
+.vscode
+jest-coverage
 node_modules
 ./src
 ./stories
 .cache
 ./test
+storybook-static
+setupTests.ts

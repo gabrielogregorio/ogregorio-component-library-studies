@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn format && yarn concurrently yarn:build yarn:build-storybook yarn:test yarn:lint

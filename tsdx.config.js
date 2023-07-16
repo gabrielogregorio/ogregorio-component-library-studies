@@ -1,6 +1,6 @@
 const postcss = require('rollup-plugin-postcss');
-const url = require('@rollup/plugin-url')
-const copy = require('rollup-plugin-copy')
+const url = require('@rollup/plugin-url');
+const copy = require('rollup-plugin-copy');
 
 module.exports = {
   rollup(config, options) {
@@ -9,16 +9,13 @@ module.exports = {
         fileName: './[hash][extname]',
         include: ['**/*.(mp3|webp)'],
         emitFiles: true,
-        limit: 0
+        limit: 0,
       }),
 
       copy({
-        targets: [
-          { src: 'src/**/*.(mp3|webp)', dest: 'dist' },
-        ],
-        hook: 'writeBundle'
+        targets: [{ src: 'src/**/*.(mp3|webp)', dest: 'dist' }],
+        hook: 'writeBundle',
       }),
-
 
       postcss({
         config: {
@@ -31,8 +28,7 @@ module.exports = {
         },
       }),
       ...config.plugins,
-
-    ]
+    ];
 
     return config;
   },
