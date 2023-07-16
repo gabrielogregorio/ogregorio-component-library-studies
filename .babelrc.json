@@ -1,5 +1,4 @@
 {
-  "sourceType": "unambiguous",
   "presets": [
     [
       "@babel/preset-env",
@@ -8,7 +7,25 @@
           "chrome": 100
         }
       }
-    ]
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ],
+    "@babel/preset-typescript"
   ],
-  "plugins": []
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": "current node"
+          }
+        ]
+      ]
+    }
+  }
 }

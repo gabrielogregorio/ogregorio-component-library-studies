@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import { ITextProps, Text, TextVariantEnum } from '../src/components/Text';
+import { Text, ITextProps } from '../src/components/text';
 
 export default {
   title: 'Components/Text',
@@ -21,33 +21,21 @@ export default {
 export const Colors = (args: ITextProps) => (
   <div className="flex flex-col space-y-4 mt-8">
     <div>
-      <Text {...args} variant={TextVariantEnum.basicItemMenu}>
-        Outlined
-      </Text>
+      <Text {...args}>Outlined</Text>
     </div>
     <div>
-      <Text {...args} variant={TextVariantEnum.textTitle}>
-        Filled
-      </Text>
+      <Text {...args}>Filled</Text>
     </div>
   </div>
 );
 
-Colors.args = {
-  variant: TextVariantEnum.textTitle,
-};
-
 export const Variants = (args: ITextProps) => (
   <div className="flex flex-col space-y-4 mt-8">
     <div>
-      <Text {...args} variant={TextVariantEnum.basicItemMenu}>
-        Outlined
-      </Text>
+      <Text {...args}>Outlined</Text>
     </div>
     <div>
-      <Text {...args} variant={TextVariantEnum.basicItemMenu}>
-        Filled
-      </Text>
+      <Text {...args}>Filled</Text>
     </div>
   </div>
 );
@@ -55,5 +43,3 @@ export const Variants = (args: ITextProps) => (
 Variants.args = {
   color: 'primary',
 };
-
-

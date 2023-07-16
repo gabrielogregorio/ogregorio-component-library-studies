@@ -1,8 +1,4 @@
-export const downloadFile = (
-  content: string,
-  filename: string,
-  blobOptions: BlobPropertyBag
-): boolean => {
+export const downloadFile = (content: string, filename: string, blobOptions: BlobPropertyBag): boolean => {
   try {
     const dataBlob = new Blob([content], blobOptions);
     const url = URL.createObjectURL(dataBlob);
